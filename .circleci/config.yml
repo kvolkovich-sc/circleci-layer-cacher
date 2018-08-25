@@ -9,15 +9,15 @@ jobs:
           name: Update submodules
           command: echo "Each run I became faster!" > /dev/null
           
-workflows:
-  version: 2
-  minutely:
-    triggers:
-      - schedule:
-          cron: "* * * * *"
-          filters:
-            branches:
-              only:
-                - master
-    jobs:
-      - build
+# workflows:
+#   version: 2
+#   minutely:
+#     triggers:
+#       - schedule:
+#           cron: "* * * * *"
+#           filters:
+#             branches:
+#               only:
+#                 - master
+#     jobs:
+#       - build
