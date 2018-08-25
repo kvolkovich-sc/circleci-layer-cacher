@@ -11,7 +11,7 @@ jobs:
           command: echo "Each run I became faster!"
           
 workflows:
-  m:
+  minutely:
     triggers:
       - schedule:
           cron: "* * * * *"
