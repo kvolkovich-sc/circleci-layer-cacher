@@ -2,13 +2,12 @@ version: 2
 jobs:
   build:
     docker:
-      - image: opuscapita/minsk-core-ci:cloud-toolbox
+      - image: opuscapita/minsk-core-ci:grails-2.4.4-jdk-8u131-nodejs-8.9.4-maven-3.3.9
     working_directory: ~/build
     steps:
-      - checkout
       - run:
           name: Update submodules
-          command: echo "Each run I became faster!"
+          command: echo "Each run I became faster!" > /dev/null
           
 workflows:
   version: 2
