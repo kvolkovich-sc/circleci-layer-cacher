@@ -11,10 +11,7 @@ jobs:
           command: echo "Each run I became faster!"
           
 workflows:
-  version: 2
-  minutely:
-    jobs:
-      - build
+  m:
     triggers:
       - schedule:
           cron: "* * * * *"
@@ -22,3 +19,5 @@ workflows:
             branches:
               only:
                 - master
+    jobs:
+      - build
