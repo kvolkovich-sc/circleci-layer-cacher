@@ -1,0 +1,23 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: opuscapita/minsk-core-ci:cloud-toolbox
+    working_directory: ~/build
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run:
+          name: Update submodules
+          command: echo "Each run I became faster!"
+          
+workflows:
+  version: 2
+  minutely:
+    triggers:
+      - schedule:
+          cron: "* * * * *"
+          filters:
+            branches:
+              only:
+                - master
