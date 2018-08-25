@@ -11,6 +11,7 @@ jobs:
           command: echo "Each run I became faster!"
           
 workflows:
+  version: 2
   minutely:
     triggers:
       - schedule:
