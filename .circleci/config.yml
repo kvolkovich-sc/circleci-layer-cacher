@@ -6,7 +6,6 @@ jobs:
     working_directory: ~/build
     steps:
       - checkout
-      - setup_remote_docker
       - run:
           name: Update submodules
           command: echo "Each run I became faster!"
@@ -14,6 +13,8 @@ jobs:
 workflows:
   version: 2
   minutely:
+    jobs:
+      - build
     triggers:
       - schedule:
           cron: "* * * * *"
